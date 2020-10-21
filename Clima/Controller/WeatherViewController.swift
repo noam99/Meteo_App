@@ -30,15 +30,18 @@ class WeatherViewController: UIViewController  { // before i had after : both We
         locationManager.requestLocation()
     }
 
-    @IBAction func locationPressed(_ sender: UIButton) {
-        locationManager.requestLocation()
-        
-    }
+   
     
 }
 
 //MARK:- CLLocationManagerDelegate
 extension WeatherViewController: CLLocationManagerDelegate{
+    
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("got location")
         if let location = locations.last {
